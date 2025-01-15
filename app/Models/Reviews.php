@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Reviews extends Model
 {
     use HasFactory;
+
+    public function book(){
+        return $this->belongsTo(Reviews::class);
+    }
 }
