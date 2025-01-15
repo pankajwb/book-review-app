@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Review>
  */
-class ReviewFactory extends Factory
+class ReviewsFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -28,7 +28,7 @@ class ReviewFactory extends Factory
     public function good(){
         return $this->state(function(array $attributes){
             return [
-                'rating' => fake()->numberBetween(2,5)
+                'rating' => fake()->numberBetween(4,5)
             ];
         });
     }
@@ -37,6 +37,14 @@ class ReviewFactory extends Factory
         return $this->state(function(array $attributes){
             return [
                 'rating' => fake()->numberBetween(1,3)
+            ];
+        });
+    }
+
+    public function average(){
+        return $this->state(function(array $attributes){
+            return [
+                'rating' => fake()->numberBetween(2,4)
             ];
         });
     }
